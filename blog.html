@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script language="javascript"> 
+    $(document).ready(function(){
+        $(".accordion-heading").click(function(){  
+              if($(".accordion-body").is(':visible')){  /* check the condition accordion-body is visible or not */
+                  $(".accordion-body").slideUp(600);  /*if content is visible then close accordion-body with specific time duration */
+                $(".plusminus").text('+')    /* add plus sign */
+            }
+            else{
+                $(this).next(".accordion-body").slideDown(600); /*if content not visible then 
+                                                                                                            show the accordion-body */
+                $(this).children(".plusminus").text('-');  /* add minus sign */
+            }
+        });
+    });
+</script>
+<style>
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.parent-div{
+    width: 100%; 
+	margin-bottom:2%;
+	margin-top:30px;
+}
+.accordion-heading{
+    margin: 0; 
+    cursor: pointer; 
+    color: black;
+	font-family:flaticon;
+	font-size:20px;
+	border-width:80%;
+	
+}
+.accordion-heading span{
+    float: right;
+}
+.accordion-body{
+margin-top:5%;
+display: none;
+    padding: 0 10px;
+	background: #f2efef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 80px;
+  width: 100%;
+ position:fixed;
+  background-color:white;
+  justify-content:space-between;
+  padding-top:10px;
+}
+
+.nav > .nav-header {
+  display: inline;
+  float:right;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+float: right;
+  display: inline;
+  font-size: 15px;
+  padding:15px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: black;
+  
+}
+
+.nav > .nav-links > a:hover {
+  color: #0260f7;
+  border-top: 5px solid #0260f7;
+  border-radius:60px;
+
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid black;
+  }
+  .nav > .nav-links {
+   
+    width: 100%;
+     background-color: black;
+    height:0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 80px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+	color:white;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+#heading{
+background-image: url(C:/Users/dines/Desktop/internship/mimg/home2.jpg);
+width:100%; 
+height:800px;
+padding-left:50px;
+padding-top:150px;
+background-size: cover;
+}
+#b1{
+background-color: #0260f7;
+color:white;
+border:1px #0260f7;
+height:60px;
+padding:10px;
+margin-right:20px;
+}
+#b1:hover{
+background-color: white;
+color: #0260f7;
+}
+#b2{
+border:1px solid #0260f7;
+height:60px;
+padding:10px;
+width:150px;
+background:transparent;
+}
+#b2:hover{
+background-color: #0260f7;
+color:white;
+}
+#D{
+background-image: url(C:/Users/dines/Desktop/internship/mimg/pattern.jpg);
+background-size: cover;
+padding: 50px 0;
+height:300px;
+}
+#d1{
+width:25%;
+display:inline-block;
+box-shadow: 0 0 20px grey;
+margin-right:1%;
+margin-left:5%;
+background-color:white;
+border-radius:6px;
+padding:10px;
+height:200px;
+overflow:hidden;
+}
+#row{
+display:inline-block;
+margin-top:50px;
+width:100%;
+margin-bottom:20px;
+}
+#column1{
+display:inline-block;
+width:300px;
+box-shadow: 0 0 20px grey;
+margin-left:8%;
+background-color:white;
+border-radius:6px;
+padding:10px;
+height:330px;
+margin-bottom:20px;
+}
+#column2{
+display:inline-block;
+width:300px;
+box-shadow: 0 0 20px grey;
+margin-left:8%;
+background-color:white;
+border-radius:6px;
+height:420px;
+padding-left:-40px;
+margin-bottom:20px;
+}
+#column3{
+display:inline-block;
+width:300px;
+box-shadow: 0 0 20px grey;
+margin-left:8%;
+background-color:white;
+height:300px;
+padding-left:-40px;
+margin-bottom:20px;
+position:relative;
+}
+
+#row img {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#row :hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#x1{
+font-family:flaticon;
+background-image: url(C:/Users/dines/Desktop/internship/mimg/bg.png);
+background-size: 100%;
+}
+#y1{
+background-image: url(C:/Users/dines/Desktop/internship/mimg/pattern.jpg);
+background-size: cover;
+color:white;
+text-align:center;
+padding:100px 0;
+}
+#p7{
+color:black;
+white-space:pre-line;
+cursor:pointer;
+font-family:flaticon;
+font-size:20px;
+}
+#p7:hover{
+color: #0260f7;
+cursor:pointer;
+}
+#ax{
+text-decoration:none;
+cursor:pointer;
+font-size:14px;
+color:grey;
+}
+#ax:hover{
+color: #0260f7;
+cursor:pointer;
+}
+#table{
+width:100%;
+margin-left:7%;
+margin-top:50px;
+color:grey;
+font-family:sans-serif;
+}
+tr{
+width:30%;}
+td{
+height:40px;
+font-size:15px;}
+td:hover{
+color: #0260f7;
+cursor:pointer;
+}
+#tr1{
+font-family:flaticon;
+font-size:20px;
+color:black;
+}
+#tr2{
+font-family:flaticon;
+font-size:15px;
+color:grey;
+cursor:default;
+}
+#tr1:hover{
+color: black;
+}
+input[type="email"]{
+padding:10px;
+}
+#btn6{
+background-color: #0260f7;;
+padding:12px;
+color:white;
+border:none;
+width:50px;
+}
+#d10{
+margin-top:30px;
+padding:20px 0;
+background-color:#f2efef;
+}
+.col1 {
+  float: left;
+  width: 50%;
+  padding: 2% 4%;
+}
+.row1{
+box-shadow: 0 0 20px grey;
+width:80%;
+margin-left:10%;
+}
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+label{
+font-family:flaticon;
+font-size:17px;
+}
+#i1{
+width:100%;
+padding:10px;
+border: 1px solid silver;
+}
+@media screen and (max-width: 720px) {
+  #d1{
+	display:block;
+	margin-bottom:30px;
+  }
+}
+#d12{
+background-color:white;
+margin-left:3%;
+padding:20px;
+width:60%;
+}
+#hx{
+font-size:17px;
+}
+#hx:hover{
+text-decoration: underline;
+cursor:pointer;
+}
+#d15{
+background-color:#f2efef;
+width:28%;
+float:right;
+margin-right:3%;
+padding:10px;
+margin-top:-165%
+}
+#d16{
+background-color:#f2efef;
+width:28%;
+float:right;
+margin-right:3%;
+padding:10px;
+margin-top:-122%;
+}
+#d17{
+background-color:#f2efef;
+width:28%;
+float:right;
+margin-right:3%;
+padding:10px;
+margin-top:-72%;
+}
+</style>
+</head>
+<body>
+<div class="nav">
+<input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <img src="C:/Users/dines/Desktop/internship/mimg/logo.png" style="padding-top:5px;margin-left:50px">
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="department.html">DEPARTMENT</a>
+    <a href="doctor.html">DOCTORS</a>
+    <a href="blog.html">BLOG</a>
+	<a href="contact.html">CONTACT</a>
+  </div>
+</div>
+
+
+<div style="margin-top:-10px;height:90px;"></div>
+<img src="C:/Users/dines/Desktop/internship/mimg/new5.jpg" >
+
+
+<div>
+<h1 style="font-family:flaticon;white-space:pre-line;float:left;width:50%;margin-left:6%;font-size:40px;margin-top:80px;"><b>Medcare Health Blog</b></h1>
+<div>
+<p style="white-space:pre-line;float:right;width:50%;margin-right:-2%;color:grey;margin-top:-80px;">
+Join the discussion with experts from Harvard Health Publishing and 
+others like you on a variety of health topics, medical news and views.</p>
+</div>
+</div>
+<div style="height:250px"></div>
+
+
+
+
+<div id="d12">
+<h4 id="hx"><b>Are certain types of sugars healthier than others?</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d12.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Vasanti Malik, ScD</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a><br><br>
+ <p style="grey;font-size:13px;white-space:pre-line;">COMMENTS
+2</p>
+<hr width="1" size="400" color="red">
+ <hr>
+</div>
+
+<div id="d12">
+<h4 id="hx"><b>Measles: The forgotten killer</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 27, 2019, 08:40 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d14.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id1.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Nicole J. LeBlanc</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr>
+</div>
+
+<div id="d12">
+<h4 id="hx"><b>Ketamine for major depression: New tool, new questions</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d13.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Vasanti Malik, ScD</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr>
+</div>
+
+
+
+<div id="d12">
+<h4 id="hx"><b>Ketamine for major depression: New tool, new questions</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d15.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Vasanti Malik, ScD</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr>
+</div>
+
+
+<div id="d12">
+<h4 id="hx"><b>Ketamine for major depression: New tool, new questions</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d12.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Vasanti Malik, ScD</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr>
+</div>
+
+<div id="d12">
+<h4 id="hx"><b>Ketamine for major depression: New tool, new questions</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<img src="C:/Users/dines/Desktop/internship/mimg/d12.jpg" height="200px" width="200px" style="float:right">
+<div style="display:flex;">
+<img src="C:/Users/dines/Desktop/internship/mimg/id.jpg" height="50px" width="50px"><p style="white-space:pre-line;font-size:15px;margin-left:10px"><a href="" >Vasanti Malik, ScD</a>
+Contributor</p></div>
+<p style="margin-right:50px;white-space:pre-line;">Most people consume many different types of sugars from a variety of 
+foods and beverages in their diet. A high intake of sugar is linked 
+to an increased risk of obesity, type 2 diabetes, cardiovascular disease, 
+and certain cancers. But whether some sugars are healthier (or worse) 
+than others remains  a question of interest to […]</p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr>
+</div>
+
+
+
+
+
+<div id="d15">
+<h4 id="hx" style="text-align:center;font-size:18px;padding:10px;"><b>Recent posts</b></h4><hr><br>
+<img src="C:/Users/dines/Desktop/internship/mimg/d12.jpg" height="50px" width="50px" style="float:left;margin-right:15px;">
+<h4 id="hx"><b>Are certain types of sugars....</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<div style="display:flex;">
+<p style="margin-right:50px;white-space:pre-line;"></p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr><br><br>
+</div>
+
+<img src="C:/Users/dines/Desktop/internship/mimg/d15.jpg" height="50px" width="50px" style="float:left;margin-right:15px;">
+<h4 id="hx"><b>Anxiety in college: What we know....</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<div style="display:flex;">
+<p style="margin-right:50px;white-space:pre-line;"></p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr><br><br>
+</div>
+
+<img src="C:/Users/dines/Desktop/internship/mimg/d14.jpg" height="50px" width="50px" style="float:left;margin-right:15px;">
+<h4 id="hx"><b>Measles: The forgotten killer</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<div style="display:flex;">
+<p style="margin-right:50px;white-space:pre-line;"></p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr><br><br>
+</div>
+
+<img src="C:/Users/dines/Desktop/internship/mimg/d13.jpg" height="50px" width="50px" style="float:left;margin-right:15px;">
+<h4 id="hx"><b>Ketamine for major depression.....</b></h4>
+<p style="color:grey;font-size:11px">POSTED MAY 29, 2019, 10:30 AM<p>
+<div style="display:flex;">
+<p style="margin-right:50px;white-space:pre-line;"></p>
+ <a href="" style="color:#0260f7;">Read more</a>
+ <hr><br><br>
+</div>
+
+</div>
+
+
+
+
+
+<div id="d16">
+<h4 id="hx" style="text-align:center;font-size:18px;padding:10px;"><b>Category</b></h4><hr><br>
+ <a href="" style="color:#0260f7;text-align:center;">Addiction</a>
+ <hr>
+ <a href="" style="color:#0260f7;text-align:center;">Adolescent health</a>
+ <hr>
+ <a href="" style="color:#0260f7;text-align:center;">Bones and joints</a>
+ <hr>
+ <a href="" style="color:#0260f7;text-align:center;">Cancer</a>
+ <hr>
+ <a href="" style="color:#0260f7;text-align:center;">Concussions</a>
+ <hr>
+  <a href="" style="color:#0260f7;text-align:center;">Diabetes</a>
+ <hr>
+ <a href="" style="color:#0260f7;text-align:center;">Fatigue</a>
+ <hr>
+ <a href="" style="color:#0260f7;">Food as medicine</a>
+ <hr>
+ 
+<a href="" style="color:#0260f7;">Read more...</a>
+ <hr>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="d17">
+<h4 id="hx" style="text-align:center;font-size:18px;padding:10px;"><b>Our experts</b></h4><hr><br>
+ <img src="C:/Users/dines/Desktop/internship/mimg/tes1.jpg" height="100px" width="100px" style="float:center;margin-left:37%">
+ <p style="color:black;font-size:15px;float:center;margin-top:12px;margin-left:35%">Howard LeWine, M.D.<p>
+ <p style="color:black;font-size:11px;white-space:pre-line;float:center;text-align:center;margin-left:11%;margin-top:-8px;">  Chief Medical Editor, 
+ Harvard Health 
+ Publishing<p>
+ <hr>
+<img src="C:/Users/dines/Desktop/internship/mimg/tes2.jpg" height="100px" width="100px" style="float:center;margin-left:37%">
+<p style="color:black;font-size:15px;float:center;margin-top:12px;margin-left:40%">Matthew Solan<p>
+<p style="color:black;font-size:11px;white-space:pre-line;float:center;text-align:center;margin-left:11%;margin-top:-8px;">  Executive Editor, 
+ Harvard Men's 
+ Health Watch<p>
+ <hr>
+ <img src="C:/Users/dines/Desktop/internship/mimg/tes3.jpg" height="100px" width="100px" style="float:center;margin-left:37%">
+ <p style="color:black;font-size:15px;float:center;margin-top:12px;margin-left:35%">Howard LeWine, M.D.<p>
+ <p style="color:black;font-size:11px;white-space:pre-line;float:center;text-align:center;margin-left:11%;margin-top:-8px;">  Chief Medical Editor, 
+ Harvard Health 
+ Publishing<p>
+ <hr>
+ 
+<a href="" style="color:#0260f7;">Know more...</a>
+ <hr>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="d10">
+<table id="table">
+<tr><td id="tr1"><b>Top Products</td><td id="tr1"><b>Quick Links</td><td id="tr1"><b>Features</td><td id="tr1"><b>Resources</b></td><td id="tr1"><b>Newsletter</b></td>
+</tr>
+<tr><td>Managed Website</td><td>Jobs</td><td>Jobs</td><td>Guides</td><td id="tr2">You can trust us. we only send promo offers,</td>
+</tr>
+<tr><td>Manage Reputation</td><td>Brand Assets</td><td>Brand Assets</td><td>Research</td><td><input type="email" name="email" placeholder="Your email address" required="required"><button id="btn6" type="submit"><i class="fa fa-arrow-right"></i></button></td>
+</tr>
+<tr><td>Power Tools</td><td>Investor Relations</td><td>Investor Relations</td><td>Experts</td>
+</tr>
+<tr><td>Marketing Service</td><td>Terms of Service</td><td>Terms of Service</td><td>Agencies</td>
+</tr>
+</table>
+<br><hr>
+<a  href="https://twitter.com/TopSocialin" class="icoTwitter" title="Twitter"><i class="fa fa-twitter" style="float:right;margin-right:85px;font-size:25px;color:white;margin-top:12px;background-color:#1da1f2;padding:4px;border-radius:6px;"></i></a>
+<a href="https://www.instagram.com/topsocial_india/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram" style="float:right;margin-right:15px;font-size:24px;color:white;margin-top:12px;background-color:#e4405f;padding:5px;border-radius:6px;height:35px;"></i></a>
+<a href="https://www.linkedin.com/company/14607228/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin" style="float:right;margin-right:15px;font-size:24px;color:white;margin-top:12px;background-color:#0077B5;padding:5px;border-radius:6px;"></i></a>
+<a href="https://www.facebook.com/TopSocialIND/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook" style="float:right;margin-right:15px;font-size:23px;color:white;margin-top:12px;background-color:#3b5998;padding:6px;border-radius:6px;"></i></a>
+
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-phone" style="margin-left:25px;color:grey;margin-right:15px;" ></i>+911244013131 , +918505809333</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-envelope" style="margin-left:-50px;color:grey;margin-right:15px;" ></i>hello@medcare.com</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-map-marker" style="margin-left:20px;color:grey;margin-right:15px;" ></i>1063, Tower B1, Spaze i-Tech Park, Sector-49, Sohna Road, Gurgaon 122018</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:10px;margin-top:0px;float:right;margin-right:60px;">© All Rights Reserved Medcare group of hospitals</p>
+</div>
+<div style="background-color:#f2efef;margin-top:-10px;height:20px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

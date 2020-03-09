@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script language="javascript"> 
+    $(document).ready(function(){
+        $(".accordion-heading").click(function(){  
+              if($(".accordion-body").is(':visible')){  /* check the condition accordion-body is visible or not */
+                  $(".accordion-body").slideUp(600);  /*if content is visible then close accordion-body with specific time duration */
+                $(".plusminus").text('+')    /* add plus sign */
+            }
+            else{
+                $(this).next(".accordion-body").slideDown(600); /*if content not visible then 
+                                                                                                            show the accordion-body */
+                $(this).children(".plusminus").text('-');  /* add minus sign */
+            }
+        });
+    });
+</script>
+<style>
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.parent-div{
+    width: 100%; 
+	margin-bottom:2%;
+	margin-top:30px;
+}
+.accordion-heading{
+    margin: 0; 
+    cursor: pointer; 
+    color: black;
+	font-family:flaticon;
+	font-size:20px;
+	border-width:80%;
+	
+}
+.accordion-heading span{
+    float: right;
+}
+.accordion-body{
+margin-top:5%;
+display: none;
+    padding: 0 10px;
+	background: #f2efef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 80px;
+  width: 100%;
+  position:fixed;
+  background-color:white;
+  justify-content:space-between;
+  padding-top:10px;
+}
+
+.nav > .nav-header {
+  display: inline;
+  float:right;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+float: right;
+  display: inline;
+  font-size: 15px;
+  padding:15px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: black;
+  
+}
+
+.nav > .nav-links > a:hover {
+  color: #0260f7;
+   border-top: 5px solid #0260f7;
+   border-radius:60px;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid black;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+     background-color: rgba(0, 0, 0, 0.3);
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 80px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+#b1{
+background-color: #0260f7;
+color:white;
+border:1px #0260f7;
+height:60px;
+padding:10px;
+margin-right:20px;
+}
+#b1:hover{
+background-color: white;
+color: #0260f7;
+}
+#table{
+width:100%;
+margin-left:7%;
+margin-top:50px;
+color:grey;
+font-family:sans-serif;
+}
+tr{
+width:30%;}
+td{
+height:40px;
+font-size:15px;}
+td:hover{
+color: #0260f7;
+cursor:pointer;
+}
+#tr1{
+font-family:flaticon;
+font-size:20px;
+color:black;
+}
+#tr2{
+font-family:flaticon;
+font-size:15px;
+color:grey;
+cursor:default;
+}
+#tr1:hover{
+color: black;
+}
+input[type="email"]{
+padding:10px;
+}
+#btn6{
+background-color: #0260f7;;
+padding:12px;
+color:white;
+border:none;
+width:50px;
+}
+#b1{
+background-color: #0260f7;
+color:white;
+border:1px #0260f7;
+height:60px;
+padding:10px;
+margin-right:20px;
+border-radius:6px;
+width:140px;
+}
+#b1:hover{
+background-color: white;
+color: #0260f7;
+}
+#d10{
+padding:20px 0;
+background-color:#f2efef;
+}
+.column {
+  float: center;
+  width: 56%;
+  padding: 100px 120px;
+}
+.row{
+margin-top:40px;
+margin-left:0%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+label{
+font-family:flaticon;
+font-size:17px;
+}
+#i1{
+width:100%;
+padding:10px;
+border: 1px solid silver;
+}
+@media screen and (max-width: 720px) {
+  #d1{
+	display:block;
+	margin-bottom:30px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="nav">
+<input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <img src="C:/Users/dines/Desktop/internship/mimg/logo.png" style="padding-top:5px;margin-left:50px">
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="department.html">DEPARTMENT</a>
+    <a href="doctor.html">DOCTORS</a>
+    <a href="blog.html">BLOG</a>
+	<a href="contact.html">CONTACT</a>
+  </div>
+</div>
+
+
+<div style="margin-top:-10px;height:90px;"></div>
+<img src="C:/Users/dines/Desktop/internship/mimg/new4.jpg" >
+
+
+
+<div class="mapouter">
+<div class="gmap_canvas">
+<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=red%20matter%20technologies&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<a href="https://www.pureblack.de"></a></div>
+<style>.mapouter{text-align:right;height:500px;width:50%;margin-top:60px;border-radius:6px;}.gmap_canvas {background:none!important;height:500px;width:50%;border-radius:6px;float:left;margin-left:15%;margin-top:5%;}</style>
+<h4 style="white-space:pre-line;float:right;margin-top:30%;margin-right:-35%;text-align:center;"><i class="fa fa-map-marker">  Location</i></h4>
+<p style="white-space:pre-line;float:right;margin-top:35%;margin-right:-50%;text-align:left;">Dwaraka Square, Plot No.21,
+Road Number 71, Flim Nagar,
+Jubilee Hills, Hyderabad,
+Telangana, 500033</p>
+</div>
+
+
+
+
+<div class="row">
+<div class="column">
+<h2 style="font-family:flaticon;"><b>Get in Touch</b></h2><br>
+<textarea id="i1" cols="60" rows="6" name="message" placeholder="Message" required="required"></textarea><br><br>
+<input id="i1" style="width:46%; margin-right:2%;overflow:hidden" type="text" name="name" placeholder="Enter your name" required="required"><input id="i1" style="width:50%" type="email" name="email" placeholder="Enter email address" required="required"><br><br>
+<input id="i1" type="subject" name="subject" placeholder="Enter subject" required="required"><br><br>
+<button type="button" id="b1" style="margin-left:100px;">Send message</button>
+</div>
+
+
+<div class="column" style="margin-top:90px;float:right;width:35%">
+<p style="white-space:pre-line;"><i class="fa fa-home" style="font-size:24px;padding-right:10px;"></i>  Buttonwood, California.
+Rosemead, CA 91770</p>
+<p style="white-space:pre-line;"><i class="fa fa-mobile" style="font-size:30px;padding-right:10px;"></i>  00 (440) 9865 562
+Mon to Fri 9am to 6pm</p>
+<p style="white-space:pre-line;"><i class="fa fa-envelope" style="font-size:22px;padding-right:10px;"></i>  support@colorlib.com
+Send us your query anytime!</p>
+</div>
+</div>
+
+
+
+<div id="d10">
+<table id="table">
+<tr><td id="tr1"><b>Top Products</td><td id="tr1"><b>Quick Links</td><td id="tr1"><b>Features</td><td id="tr1"><b>Resources</b></td><td id="tr1"><b>Newsletter</b></td>
+</tr>
+<tr><td>Managed Website</td><td>Jobs</td><td>Jobs</td><td>Guides</td><td id="tr2">You can trust us. we only send promo offers,</td>
+</tr>
+<tr><td>Manage Reputation</td><td>Brand Assets</td><td>Brand Assets</td><td>Research</td><td><input type="email" name="email" placeholder="Your email address" required="required"><button id="btn6" type="submit"><i class="fa fa-arrow-right"></i></button></td>
+</tr>
+<tr><td>Power Tools</td><td>Investor Relations</td><td>Investor Relations</td><td>Experts</td>
+</tr>
+<tr><td>Marketing Service</td><td>Terms of Service</td><td>Terms of Service</td><td>Agencies</td>
+</tr>
+</table>
+<br><hr>
+<a  href="https://twitter.com/TopSocialin" class="icoTwitter" title="Twitter"><i class="fa fa-twitter" style="float:right;margin-right:85px;font-size:25px;color:white;margin-top:12px;background-color:#1da1f2;padding:4px;border-radius:6px;"></i></a>
+<a href="https://www.instagram.com/topsocial_india/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram" style="float:right;margin-right:15px;font-size:24px;color:white;margin-top:12px;background-color:#e4405f;padding:5px;border-radius:6px;height:35px;"></i></a>
+<a href="https://www.linkedin.com/company/14607228/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin" style="float:right;margin-right:15px;font-size:24px;color:white;margin-top:12px;background-color:#0077B5;padding:5px;border-radius:6px;"></i></a>
+<a href="https://www.facebook.com/TopSocialIND/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook" style="float:right;margin-right:15px;font-size:23px;color:white;margin-top:12px;background-color:#3b5998;padding:6px;border-radius:6px;"></i></a>
+
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-phone" style="margin-left:25px;color:grey;margin-right:15px;" ></i>+911244013131 , +918505809333</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-envelope" style="margin-left:-50px;color:grey;margin-right:15px;" ></i>hello@medcare.com</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:13px;float:left;margin-right:-165px;margin-top:7px;"><i class="fa fa-map-marker" style="margin-left:20px;color:grey;margin-right:15px;" ></i>1063, Tower B1, Spaze i-Tech Park, Sector-49, Sohna Road, Gurgaon 122018</p><br>
+<p style="color:grey;font-family:Trebuchet MS;font-size:10px;margin-top:0px;float:right;margin-right:60px;">© All Rights Reserved Medcare group of hospitals</p>
+</div>
+<div style="background-color:#f2efef;margin-top:-10px;height:20px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
